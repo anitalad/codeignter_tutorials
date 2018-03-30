@@ -5,7 +5,9 @@ class UsersModel extends CI_Model {
 		$this->load->database();
 		//print_r($this->db);
 
-		$q = $this->db->query('select * from users');
+		$q = $this->db->select()
+					  ->where('id',1)
+					  ->get('users');
 
 		return $result = $q->result_array();
 
